@@ -5,93 +5,324 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Personal Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        .collapse-content { display: none; opacity: 0; transition: all 0.5s ease; }
-        .collapse-open { display: block; opacity: 1; }
-    </style>
+    <script> src="./tailwind.config.js"</script>
 </head>
-<body class="overflow-x-hidden bg-gradient-to-b from-green-200 to-green-50">  
+<body class="overflow-x-hidden">
 
-    <nav class="w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50 bg-white/60 backdrop-blur-md shadow-sm">
-        <img src="./images/Preview.jpg" alt="Logo" class="w-28 cursor-pointer mr-14">
+    <div class="fixed right-0 left-0 -z-10 translate-y-[-0%]">
+        <img src="./images/bg-color1.png" alt="" class="w-full h-full object-cover">
+    </div>
 
-        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-70"> 
+    <nav class="w-full fixed px-5 lg:px-8 lg: xl:px-[8%] py-4 flex
+    items-center justify-between z-50">
+        <img src="./images/Preview.jpg" alt="Logo"
+        class="w-28 cursor-pointer mr-14"> 
+        <ul class="hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3 bg-white shaddow-sm bg-opacity-50"> 
             <li><a href="#top">Home</a></li>
             <li><a href="#about">About me</a></li>
             <li><a href="#experiences">Experiences</a></li>
             <li><a href="#work">My Work</a></li>
             <li><a href="#contact">Contact me</a></li>
         </ul>
-    </nav>
+        
+        <div class="flex items-center gap-4 ">
+        <button><img src="./images/halfmoon.png" alt="" 
+        class="w-6"></button>
 
-<!-------------HEADER--------------->
-<div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col items-center justify-center gap-4">
+        <a href="#contact"
+        class="hidden lg:flex items-center gap-3 px px-10 py-2.5 border
+        border-gray-500 rounded-full ml-4">
+        Contact <img src="" alt=""
+        class="w-3"></a>
+        
+        <button class="block md:hidden ml-3" onclick="openMenu()">
+            <img src="./images/menu.png" alt="" class="w-10">
+        </button
+
+        </div>
+<!---------mobile menu---------> 
+        <ul id="sideMenu" class="flex md:hidden flex-col gap-4 
+        py-20 px-10 fixed -right-64 top-0 bottom-0 w-64 z-50 h-screen 
+        bg-rose-50 transition duration-500">
+
+
+            <div class="absolute right-6 top-6" onclick="closeMenu()">
+                <img src="./images/cross-23.png" alt="" class="w-5 
+                cursor-pointer">
+            </div>
+
+            <li><a href="#top" onclick="closeMenu()">Home</a></li>
+            <li><a href="#about" onclick="closeMenu()">About me</a></li>
+            <li><a href="#experiences" onclick="closeMenu()">Experiences</a></li>
+            <li><a href="#work" onclick="closeMenu()">My Work</a></li>
+            <li><a href="#contact" onclick="closeMenu()">Contact me</a></li>
+
+        </ul>     
+
+</nav>
+
+<!-------------header--------------->
+
+<div class="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col 
+items-center justify-center gap-4">
     <img src="./images/ne.png" alt="" class="rounded-full w-32">
-    <h3 class="text-xl md:text-2xl mb-3">Hi! I'm Mario D. Naive Jr. ✋</h3>
-    <h1 class="text-4xl sm:text-6xl text-green-700 font-bold">Crafting Dreams into Reality</h1>
-    <p class="max-w-2xl mx-auto">I am a BS Mechanical Engineering student skilled in SolidWorks and AutoCAD...</p>
+    <h3 class="flex items-end gap-2 text-xl md:text-2xl mb-3">
+        Hi! I'm Mario D. Naive Jr. ✋</h3>
+    <h1 class="text-3xl sm:text-6xl lg:text-[40px]">
+        Crafting Dreams into Reality
+    </h1>
+    <p class="max-w-2xl mx-auto">
+        I am a BS Mechanical Engineering student at VSU, skilled in using SolidWorks 
+        and AutoCAD for precise engineering design and modeling. My studies and technical 
+        expertise equip me to tackle complex engineering challenges.
+    </p>
 
     <div>
-        <a href="#contact" class="px-10 py-3 border rounded-full bg-gradient-to-r from-green-600 to-green-400 text-white flex items-center gap-2">Contact me ➡</a>
+        <a href="./images/compute-programmer.png" download
+        class="px-10 py-3 border rounded-full bg-gradient-to-r from-[#b820e6] to-[#da7d20] text-white flex 
+        items-center gap-2">contact me ➡</a>
     </div>
-</div>
 
-<!-------------ABOUT ME--------------->
+    </div>
+
+<!--------About Me----------->
 <div id="about" class="w-full px-[12%] py-10 scroll-mt-20">
-    <h4 class="text-center mb-2 text-lg text-green-700">Introduction</h4>
-    <h2 class="text-center text-5xl text-green-900 font-bold">About Me</h2>
-</div>
+    <h4 class="text-center mb-2 text-lg">Introduction</h4>
+    <h2 class="text-center text-5xl">About Me</h2>
 
-<!-------------EXPERIENCES--------------->
+    <div class="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
+        <div class="max-w-max mx-auto relative">
+            <img src="./images/aboutus.jpg" alt="" class="w-64 sm:w-80 rounded-3xl max-w-none">
+        </div>
+        <div class="flex-1">
+            <p class="mb-10 max-w-2xl  text-justify">I am a dedicated Mechanical Engineering student with a diverse skill set that spans both technical and creative fields. I have hands-on experience with AutoCAD and SolidWorks, which I use to create precise engineering designs, and I also enjoy the practical challenge of fixing broken bicycles. Beyond engineering, I have a passion for web development, where I use PyCharm along with HTML and CSS to create web applications.
+
+                On the creative side, I play guitar with a focus on fingerstyle technique and have a hobby of singing. I find balance in combining my technical expertise with my love for music, continually seeking ways to grow in both areas.</p>
+
+            <ul class="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+                hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+                    <img src="./images/code.png" alt="" class="w-7 mt-3">
+                    <h3 class="my-4 font-semibold text-gray-700">Languages</h3>
+                    <p class="text-gray-600 text-sm">HTML, CSS, Pycharm, JavaScript</p>
+                </li>
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+                hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+                <img src="./images/educ.png" alt="" class="w-7 mt-3">
+                    <h3 class="my-4 font-semibold text-gray-700 text-center">Education</h3>
+                    <p class="text-center text-sm text-gray-600">I am currently a college student pursuing BSME Course.</p>
+                    <a href="./images/educa.png"
+        class="px-7 py-2 border rounded-full bg-gradient-to-r 
+        from-[#b820e6] to-[#da7d20] text-white flex gap-5">Click here</a>
+                </li>
+                <li class="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer
+                hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500 hover:shadow-[4px_4px_0_#000]">
+                    <img src="./images/project.png" alt="" class="w-7 mt-3">
+                    <h3 class="my-4 font-semibold text-gray-700">My Projects</h3>
+                    <p class="text-gray-600 text-sm text-center">Feel free to explore my work folder and experiences 
+                    to learn more about the projects I've completed and the skills I've developed. 
+                    </p>
+                </li>
+            </ul>
+            <h4 class="my-6 text-gray-700">Tools I Use</h4>
+            <ul class="flex items-center gap-3 sm:5">
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                    <img src="./images/vscode.png" alt="" class="w-10 sm:w-12">
+                </li>
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                    <img src="./images/pc.png" alt="" class="w-10 sm:w-12">
+                </li>
+                <li class="flex items-center justify-center w-12 sm:w-14 aspect-square border-gray-400
+                rounded-lg cursor-pointer hover:translate-y-1 duration-500">
+                    <img src="./images/Mic.png" alt="" class="w-10 sm:w-12">
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<!-----------experiences----------->
 <div id="experiences" class="w-full px-[12%] py-10 scroll-mt-20">
-    <h2 onclick="toggleCollapse('expContent')" class="text-center text-5xl text-green-900 font-bold cursor-pointer hover:text-green-700">My Experiences ⬇</h2>
+    <h4 class="text-center mb-2 text-lg">What I offer</h4>
+    <h2 class="text-center text-5xl">My Experiences</h2>
+    <p class="text-center max-2xl mx-auto mt-5 mb-12">I have hands-on experience in repairing 
+    bicycles and some motor systems, which has given me practical skills in mechanical troubleshooting. 
+    My background in mechanical engineering equips me with the ability to solve complex engineering 
+    problems, combining theoretical knowledge with practical application. Alongside my mechanical expertise, 
+    I have a strong interest in electronics, constantly exploring how electronic systems integrate with 
+    mechanical designs. This combination of skills allows me to approach challenges with a well-rounded perspective.</p>
 
-    <div id="expContent" class="collapse-content mt-10">
-        <p class="text-center max-w-2xl mx-auto">I have hands-on experience in repairing bicycles...</p>
-
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 my-10">
-            <div class="border border-green-400 rounded-lg p-6 hover:bg-green-50">Slider Crank Mechanism</div>
-            <div class="border border-green-400 rounded-lg p-6 hover:bg-green-50">Bicycle Repair</div>
-            <div class="border border-green-400 rounded-lg p-6 hover:bg-green-50">Land Surveying</div>
+    <div class="grid grid-cols-5 gap-6 my-10">
+        <div class="border border-gray-400 rounded-lg px-8 py-12 
+        hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500">
+            <img src="./images/prog.png" alt="" class="w-20">
+            <h3 class="text-lg my-4 text-gray-700">Slider Crank Mechanism</h3>
+            <p class="text-sm text-gray-600 leading-5">Years and years the advancement of 
+            technology...</p>
+            </a>
+            <a href="./images/crank.png" class="flex items-center gap-2 text-sm mt-5">Read more</a>
+            <a href="./images/sl.mp4" class="px-5 py-2 border rounded-lg bg-gradient-to-r 
+            from-[#b820e6] to-[#da7d20] text-white flex gap-5"> video clip</a>
+        </div>
+        <div class="border border-gray-400 rounded-lg px-8 py-12 
+        hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500">
+            <img src="./images/rep.jpg" alt="" class="w-20">
+            <h3 class="text-lg my-4 text-gray-700">Bicycle Repair</h3>
+            <p class="text-sm text-gray-600 leading-5">Cycling is one of the best way
+            to have a healthy life style.....</p>
+            <a href="" class="flex items-center gap-2 text-sm mt-5">Read more</a>
+        </div>
+        <div class="border border-gray-400 rounded-lg px-8 py-12 
+        hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500">
+            <img src="./images/land.jpg" alt="" class="w-20">
+            <h3 class="text-lg my-4 text-gray-700">Land Surveying</h3>
+            <p class="text-sm text-gray-600 leading-5">Land surveying using a theodolite involves...</p>
+            <a href="./images/surv.png" class="flex items-center gap-2 text-sm mt-5">Read more</a>
+        </div>
+        <div class="border border-gray-400 rounded-lg px-8 py-12 
+        hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500">
+            <img src="./images/mot.png" alt="" class="w-20">
+            <h3 class="text-lg my-4 text-gray-700">Motor Control Trainer</h3>
+            <p class="text-sm text-gray-600 leading-5">We developed a motor control trainer...</p>
+            <a href="./images/ac.png" class="flex items-center gap-2 text-sm mt-5">Read more</a>
+        </div>
+        <div class="border border-gray-400 rounded-lg px-8 py-12 
+        hover:shadow-[4px_4px_0_#000] cursor-pointer hover:bg-[#fcf4ff] hover:-translate-y-1 duration-500">
+            <img src="./images/meter.jpg" alt="" class="w-20">
+            <h3 class="text-lg my-4 text-gray-700">Velocity Flow Meter</h3>
+            <p class="text-sm text-gray-600 leading-5">A velocity flow meter is an instrument ...</p>
+            <a href="./images/flow.png" class="flex items-center gap-2 text-sm mt-5">Read more</a>
         </div>
     </div>
-</div>
 
-<!-------------MY WORK--------------->
+</div>
+<!----------------my work----------------->
+
 <div id="work" class="w-full px-[12%] py-10 scroll-mt-20">
-    <h2 onclick="toggleCollapse('workContent')" class="text-center text-5xl text-green-900 font-bold cursor-pointer hover:text-green-700">My Work ⬇</h2>
+    <h4 class="text-center mb-2 text-lg">My Portfolio</h4>
+    <h2 class="text-center text-5xl">My Latest work</h2>
+    <p class="text-center max-2xl mx-auto mt-5 mb-12 text-justify">In my recent work, I successfully developed three 
+    unique web applications, utilizing PyCharm as my development environment and leveraging HTML and CSS 
+    for the front-end design. Each application was created with a focus on delivering intuitive and 
+    user-friendly interfaces, while also incorporating efficient code practices. I took on the challenge 
+    of designing and implementing these projects from scratch, ensuring that they were both functional and 
+    aesthetically pleasing. This experience not only honed my programming skills but also deepened my understanding 
+    of web development principles. These applications reflect my ability to bring ideas to life through code and design.</p>
 
-    <div id="workContent" class="collapse-content mt-10">
-        <p class="text-center max-w-2xl mx-auto">Here are my latest web app projects...</p>
+    <div class="grid grid-cols-3 my-10 gap-5">
+        <div class="aspect-square bg-[url('./images/bin.jpg')] bg-no-repeat 
+        bg-cover bg-center rounded-lg relative cursor-pointer group">
+        
+            <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 
+            -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 
+            group-hover:bottom-7">
 
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 my-10">
-            <div class="h-48 bg-green-200 rounded-lg">DEC-BIN-DEC</div>
-            <div class="h-48 bg-green-200 rounded-lg">Matrices Solver</div>
-            <div class="h-48 bg-green-200 rounded-lg">Linear Systems Solver</div>
+            <h2 class="font-semibold">DEC-BIN-DEC Solver</h2>
+            <a href="https://bin-dec-bin-sxozpupjiymc4firtungrp.streamlit.app/" target=_blank>
+            
+
+                <div class="border rounded-full border-black w-9 
+                aspect-square flex items-center justify-center shadow-[2px_2px_0_#000]
+                group-hover:bg-lime-300 transition">
+                    <img src="./images/send.png" alt="" class="w-10">
+            </a>
+                </div>
+            </div>
+        </div>
+        <div class="aspect-square bg-[url('./images/ma.png')] bg-no-repeat 
+        bg-cover bg-center rounded-lg relative cursor-pointer group">
+        
+            <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 
+            -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 
+            group-hover:bottom-7">
+            <h2 class="font-semibold">Matrices Solver</h2>
+            <a href="https://matrixes-vvaxxsg5egzdbgmdlzlnzk.streamlit.app/" target=_blank>
+                
+                <div class="border rounded-full border-black w-9 
+                aspect-square flex items-center justify-center shadow-[2px_2px_0_#000]
+                group-hover:bg-lime-300 transition">
+                    <img src="./images/send.png" alt="" class="w-10">
+            </a>
+                </div>
+            </div>
+        </div>
+        <div class="aspect-square bg-[url('./images/linear.jpg')] bg-no-repeat 
+        bg-cover bg-center rounded-lg relative cursor-pointer group">
+        
+            <div class="bg-white w-10/12 rounded-md absolute bottom-5 left-1/2 
+            -translate-x-1/2 py-3 px-5 flex items-center justify-between duration-500 
+            group-hover:bottom-7">
+                    <h2 class="font-semibold">Systems-of-linear Solver</h2>
+                    <a href="https://systems-of-linear-equation-calculator-2v4jwpxbslgkp3alpvutg3.streamlit.app/" target=_blank>
+                        
+                <div class="border rounded-full border-black w-9 
+                aspect-square flex items-center justify-center shadow-[2px_2px_0_#000]
+                group-hover:bg-lime-300 transition">
+                    <img src="./images/send.png" alt="" class="w-10">
+            </a>
+                </div>
+            </div>
         </div>
     </div>
+    <a href="#" class="w-max flex items-center justify-center gap-2 text-gray-700
+    border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto my-20 
+    hover:bg-[#fcf4ff] duration-500">Show more
+        <img src="" alt="" class="w-4">
+    </a>
+
 </div>
+<!--------------contact--------------->
+<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20 bg-[url('./images/')]
+bg-no-repeat bg-[length:90%_auto] bg-center">
+    <h4 class="text-center mb-2 text-lg">Connect with me</h4>
+    <h2 class="text-center text-5xl">Get in touch</h2>
+    <p class="text-center max-2xl mx-auto mt-5 mb-12">Feel free to reach out to me if you 
+    have any questions or would like to discuss potential projects. I'm always open to connecting 
+    with others who share a passion for technology and engineering. You can contact me through filling
+    up below's form and please include your name and your email address upon messaging, and I'll get back 
+    to you as soon as possible.</p>
 
-<!-------------CONTACT--------------->
-<div id="contact" class="w-full px-[12%] py-10 scroll-mt-20">
-    <h2 onclick="toggleCollapse('contactContent')" class="text-center text-5xl text-green-900 font-bold cursor-pointer hover:text-green-700">Contact Me ⬇</h2>
+    <form method="POST" action="https://api.web3forms.com/submit" class="max-w-2xl mx-auto">
 
-    <div id="contactContent" class="collapse-content mt-10">
-        <form method="POST" class="max-w-2xl mx-auto bg-white p-6 rounded-lg shadow">
-            <input type="text" placeholder="Your name" class="w-full border p-3 mb-4 rounded">
-            <input type="email" placeholder="Your email" class="w-full border p-3 mb-4 rounded">
-            <textarea rows="5" placeholder="Message" class="w-full border p-3 mb-4 rounded"></textarea>
-            <button class="px-10 py-3 bg-green-600 text-white rounded-full hover:bg-green-700">Submit</button>
-        </form>
+        <input type="hidden" name="access_key" value="74534fe0-c0c0-40f9-a6ef-b240989526a1">
+
+        <div class="grid grid-cols-2 gap-6 mt-10 mb-8">
+            <input type="text" placeholder="Enter your name" class="flex-1 p-3
+            outline-none border-[0.5px] border-gray-400 rounded-md bg-white" required name="name">
+
+            <input type="email" placeholder="Enter your email" class="flex-1 p-3
+            outline-none border-[0.5px] border-gray-400 rounded-md bg-white" required name="email">
+        </div>
+        <textarea rows="6" placeholder="Enter your message" class="w-full p-4
+        outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6" required name="message"></textarea>
+
+    <button class="py-3 px-8 w-max flex items-center justify-between gap-2
+    bg-black/80 text-white rounded-full mx-auto hover:bg-black duration-500">Submit now
+    </button>
+    </form>
+</div>
+<!----------footer-------->
+<div class="mt-20">
+    <div class="text-center">
+        <img src="./images/Preview.jpg" alt="" class="w-36 mx-auto mb-2">
+        <div class="w-max flex items-center gap-2 mx-auto">
+            <img src="./images/mail.png" alt="" class="w-6">
+            naivemario@gmail.com
+        </div>
+    </div>
+    <div class="text-center sm:flex items-center justify-between border-t
+    border-gray-400 mx-[10%] mt-12 py-6">
+        <p>@ 2024 Mario. All rights reserved.</p>
+        <ul class="flex items-center gap-10 justify-center mt-4 sm:mt-0">
+            <li><a href="https://github.com/dashboard"> Github</a></li>
+            <li><a href="https://www.youtube.com/@marionaive6600"> Youtube</a></li>
+            <li><a href="htpps"> Tiktok</a></li>
+        </ul>
     </div>
 </div>
 
-<script>
-function toggleCollapse(id) {
-    const el = document.getElementById(id);
-    el.classList.toggle('collapse-open');
-}
+<script src="./script.js">
 </script>
-
 </body>
 </html>
